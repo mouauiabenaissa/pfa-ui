@@ -10,18 +10,27 @@ import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
 import CardComponent from "../../../Components/Cards/CardComponent/CardComponent"
 import DeviceItem from "../Devices/DeviceItem/DeviceItem"
+import { toast } from "react-toastify"
 
 function Devices(props) {
     const navigate = useNavigate()
     const [devices, setDevices] = React.useState([])
-    {
-        React.useEffect(() => {
-            axios.get(`/device/list`)
-                .then(res => {
-                    setDevices(res.data.devices)
-                })
-        }, [])
-    }
+    const [loading, setLoading] = useState(false)
+
+    React.useEffect(() => {
+        setLoading(true)
+        axios.get(`/device/list`)
+            .then(res => {
+                setDevices(res.data.devices)
+                setLoading(false)
+            }).catch(err => {
+                setLoading(false)
+                toast.error("error occured")
+            })
+
+
+    }, [])
+
     return (
         <CardComponent
             containerStyles={props.containerStyles}

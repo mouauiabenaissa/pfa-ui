@@ -34,15 +34,15 @@ function Sidebar() {
             />
             <MenuItem
                 id="scan"
-                title="Scan range of devices"
-                icon={<i className="fa-solid fa-gauge" style={{ fontSize: "18px" }}></i>}
-                onClick={() => onClick("/scan")}
-            />
-            <MenuItem
-                id="interface"
                 title="interfaces of device"
                 icon={<i className="fa-solid fa-gauge" style={{ fontSize: "18px" }}></i>}
                 onClick={() => onClick("/interfaces")}
+            />
+            <MenuItem
+                id="interface"
+                title="Scan range of devices"
+                icon={<i className="fa-solid fa-gauge" style={{ fontSize: "18px" }}></i>}
+                onClick={() => onClick("/scan")}
             />
         </MenuList>
 

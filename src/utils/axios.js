@@ -20,8 +20,8 @@ axiosInstance.interceptors.response.use(
     function (error) {
         if (error.response)
             if (error.response.status === 401) {
-                //localStorageService.clearToken();
-                //window.location.href = "/devices";
+                localStorageService.clearToken();
+                window.location.href = "/";
                 console.log('401')
             } else return Promise.reject(error);
         else return Promise.reject(error);

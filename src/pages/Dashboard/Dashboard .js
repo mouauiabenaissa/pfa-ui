@@ -9,6 +9,7 @@ import { toast, ToastContainer } from "react-toastify"
 import useWindowSize from "../../Hooks/useWindowSize"
 import Devices from "../Dashboard/Devices/Devices";
 import ScanDevices from "./ScanDevices/ScanDevices";
+import InterfacesDevice from "./InterfacesDevice/InterfacesDevice";
 function Dashboard() {
     const { pathname } = useLocation();
     // eslint-disable-next-line no-unused-vars
@@ -36,7 +37,8 @@ function Dashboard() {
                     <div className={classes.contentBlock}>
                         <Routes>
                             <Route exact path="/devices" element={<Devices />} />
-                            <Route exact path="/interfaces" element={<ScanDevices />} />
+                            <Route exact path="/interfaces" element={<InterfacesDevice />} />
+                            <Route exact path="/scan" element={<ScanDevices />} />
                         </Routes>
                     </div>
                 </Column>
