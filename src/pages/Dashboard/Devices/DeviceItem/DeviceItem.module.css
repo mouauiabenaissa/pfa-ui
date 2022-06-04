@@ -1,0 +1,11 @@
+.listStyles {
+  cursor: pointer;
+}
+.available {
+  color: #22c8a2;
+  font-size: 12px;
+}
+.unavailable {
+  color: #0d0e0d;
+  font-size: 12px;
+}
