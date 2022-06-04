@@ -31,7 +31,7 @@ function LoginForm() {
 
     const handleLogin = () => {
         setLoading(true)
-        axios.post('/login', userData)
+        axios.post('/user/login', userData)
             .then(response => {
                 console.log(response)
                 LocalStorage.setToken(response.data.token)
@@ -65,7 +65,7 @@ function LoginForm() {
                                     className={classes.TextFieldFirst}
                                     id="email"
                                     label="Adress_Email"
-                                    placeholder='email'
+                                    placeholder='username'
                                     onChange={(e) => setuserData({ ...userData, username: e.target.value })}
                                     InputProps={{
                                         startAdornment: (

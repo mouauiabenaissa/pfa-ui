@@ -19,10 +19,16 @@ function ScanDevices(props) {
     const handleClickButton = () => {
         setLoading(true)
         axios.post("/device/scan", resultScan).then(response => {
-            toast.success("success")
-            setShowTable(true)
-            setLoading(false)
-            setResultScan(response.data)
+            console.log(response)
+            console.log(response.data)
+            console.log(response.data["ln_new_devices"])
+            window.alert(response.data["ln_new_devices"] +" new devices added")
+
+            window.location.href = "/devices"
+            // toast.success("success")
+            // setShowTable(true)
+            // setLoading(false)
+            // setResultScan(response.data)
         }).catch(err => {
             toast.error("error occured")
             setLoading(false)

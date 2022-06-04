@@ -19,7 +19,7 @@ function InterfacesDevice(props) {
 
     const handleClickButton = () => {
         setLoading(true)
-        axios.post("/device/interfaces", IP).then(response => {
+        axios.post("/device/interface/list", IP).then(response => {
             toast.success("success")
             setShowTable(true)
             setLoading(false)
