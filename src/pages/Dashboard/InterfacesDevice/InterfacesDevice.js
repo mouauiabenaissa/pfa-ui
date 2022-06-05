@@ -47,8 +47,6 @@ function InterfacesDevice(props) {
 
 
     }, [])
-    console.log(IP)
-    console.log(devices)
     return (
 
         loading ? <LoadingComponent /> :
@@ -97,6 +95,7 @@ function InterfacesDevice(props) {
                                         <th>Address IP</th>
                                         <th>Mask</th>
                                         <th >Enabled?</th>
+                                        <th>Edit</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -104,6 +103,7 @@ function InterfacesDevice(props) {
                                         <InterfacesDeviceItem
                                             index={index}
                                             item={interfaceItem}
+                                            ip={IP}
                                             key={index}
                                         />
                                     ))}
